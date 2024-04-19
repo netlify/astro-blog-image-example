@@ -54,5 +54,7 @@ export const POST: APIRoute = async ({ request, url, redirect }) => {
   const newSourceFile = sourceFile.replace(componentString, newComponentString);
   fs.writeFileSync(sourceFilePath, newSourceFile);
 
-  return redirect(data.url);
+  return new Response(JSON.stringify({ success: true }), {
+    headers: { "Content-Type": "application/json" },
+  });
 };
