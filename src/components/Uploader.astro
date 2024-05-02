@@ -5,6 +5,10 @@ interface Props {
 
 const { id } = Astro.props;
 const url = Astro.url.href;
+
+if (import.meta.env.MODE !== "development") {
+  throw new Error("This component can not be used in production");
+}
 ---
 
 <form action="/actions/upload" method="post" enctype="multipart/form-data">
