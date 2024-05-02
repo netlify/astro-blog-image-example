@@ -2,9 +2,6 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import BlogPost from "../../layouts/BlogPost.astro";
 
-// TODO: Double check that this actually exports these pages.
-export const prerender = true;
-
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
   return posts.map((post) => ({

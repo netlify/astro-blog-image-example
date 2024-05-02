@@ -20,6 +20,6 @@ export default defineConfig({
     mdx(),
     sitemap(),
   ],
-  output: "server",
+  output: "hybrid",
   adapter: netlify(),
 });

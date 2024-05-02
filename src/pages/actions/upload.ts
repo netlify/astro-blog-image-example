@@ -1,6 +1,8 @@
 import fs from "fs";
 import type { APIRoute } from "astro";
 
+export const prerender = false;
+
 const FILE_TYPE_MAP: Record<string, string> = {
   "image/jpeg": "jpg",
   "image/png": "png",
@@ -8,6 +10,10 @@ const FILE_TYPE_MAP: Record<string, string> = {
 };
 
 export const POST: APIRoute = async ({ request, url, redirect }) => {
+  if (import.meta.env.MODE === "development") {
+    return new Response("Uploader not available", { status: 404 });
+  }
+
   const formData = await request.formData();
 
   const data = {
