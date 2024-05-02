@@ -10,7 +10,7 @@ const FILE_TYPE_MAP: Record<string, string> = {
 };
 
 export const POST: APIRoute = async ({ request, url, redirect }) => {
-  if (import.meta.env.MODE === "development") {
+  if (import.meta.env.MODE !== "development") {
     return new Response("Uploader not available", { status: 404 });
   }
 
