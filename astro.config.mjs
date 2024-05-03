@@ -1,8 +1,8 @@
 import mdx from "@astrojs/mdx";
+import netlify from "@astrojs/netlify";
+import sitemap from "@astrojs/sitemap";
 import AutoImport from "astro-auto-import";
 import { defineConfig } from "astro/config";
-import sitemap from "@astrojs/sitemap";
-import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
